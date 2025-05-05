@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* Primary */
+    --cyan: hsl(180, 66%, 49%);
+    --dark-violet: hsl(257, 27%, 26%);
+  
+    /* Secondary */
+    --red: hsl(0, 87%, 67%);
+  
+    /* Neutral */
+    --gray: hsl(0, 0%, 75%);
+    --grayish-violet: hsl(257, 7%, 63%);
+    --very-dark-blue: hsl(255, 11%, 22%);
+    --very-dark-violet: hsl(260, 8%, 14%);
+}
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+}
+
+body {
+    background-color: white;
+    overflow-x: hidden;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1440px; 
+    margin: 0 auto; 
+    padding: 0 40px; 
+    width: 100%;
+    gap: 60px;
+}
+
+/* nav-bar */
+
+header {
+    margin-top: 40px;
+	height: 60px;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+nav > .logo_and_options > ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    color: gray;
+}
+
+.logo_and_options {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-buttons {
+    display: flex;
+    font-size: 1rem;
+}
+
+.nav-buttons > button {
+    width: 90px;
+    cursor: pointer;
+}
+
+#login-button {
+    border-style: none;
+    background-color: white;
+    color: var(--grayish-violet);
+}
+
+#sign-up-button {
+    border-radius: 20px;
+    border-style: none;
+    background-color: var(--cyan);
+    color: white;
+}
+
+/* hero-section */
+
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60vh;
+    width: 100%;
+}
+
+.hero-infos > h1 {
+    font-size: 4.7rem;
+    color: var(--very-dark-blue);
+    line-height: 5rem;
+}
+
+.hero-infos > p {
+    color: gray;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+}
+
+.hero-infos > button {
+    margin-top: 30px;
+    background-color: var(--cyan);
+    border-style: none;
+    color: white;
+    padding: 20px 80px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.hero-image > img {
+    position: absolute;
+    top: 150px;
+    right: -100px;
+    height: 600px;
+}
+
+/* input */
+
+.container-box-link {
+    background-color: var(--very-dark-violet);
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 45px;
+    border-radius: 15px;
+}
+
+.container-box-link > input {
+    height: 100%;
+    flex: 4;
+    border-radius: 12px;
+    padding: 15px;
+    border-style: none;
+    font-size: 1rem;
+}
+
+.container-box-link > button {
+    height: 100%;
+    flex: 1;
+    border-radius: 12px;
+    border-style: none;
+    background-color: var(--cyan);
+    color: white;
+    font-size: 1rem;
+}
