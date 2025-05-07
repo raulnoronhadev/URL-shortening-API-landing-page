@@ -34,7 +34,7 @@ body {
     flex-direction: column;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 0px;
     width: 100%;
     gap: 65px;
 }
@@ -54,11 +54,25 @@ nav {
     font-size: 1rem;
 }
 
+.logo {
+    cursor: pointer;
+}
+
 nav>.logo_and_options>ul {
     list-style: none;
     display: flex;
     gap: 20px;
     color: gray;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+nav>.logo_and_options>ul>li {
+    transition: color 0.2s ease;
+}
+
+nav>.logo_and_options>ul>li:hover {
+    color: var(--very-dark-violet);
 }
 
 .logo_and_options {
@@ -81,6 +95,11 @@ nav>.logo_and_options>ul {
     border-style: none;
     background-color: white;
     color: var(--grayish-violet);
+    transition: color 0.2s ease;
+}
+
+#login-button:hover {
+    color: var(--very-dark-violet);
 }
 
 #sign-up-button {
@@ -88,6 +107,11 @@ nav>.logo_and_options>ul {
     border-style: none;
     background-color: var(--cyan);
     color: white;
+    transition: background-color 0.2s ease;
+}
+
+#sign-up-button:hover {
+    background-color: hsla(180, 66%, 49%, 0.562);
 }
 
 /* hero-section */
@@ -121,6 +145,12 @@ nav>.logo_and_options>ul {
     border-radius: 40px;
     cursor: pointer;
     font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.hero-infos>button:hover {
+    background-color: hsla(180, 66%, 49%, 0.562);
+
 }
 
 .hero-image>img {
@@ -171,6 +201,12 @@ nav>.logo_and_options>ul {
     background-color: var(--cyan);
     color: white;
     font-size: 1rem;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.container-box-link>button:hover {
+    background-color: #88e4e4;
 }
 
 /* advanced statistics */
@@ -270,6 +306,8 @@ nav>.logo_and_options>ul {
     align-items: center;
 }
 
+/* footer */
+
 .pre-footer {
     height: 250px;
     width: 100%;
@@ -297,9 +335,15 @@ nav>.logo_and_options>ul {
     border-radius: 40px;
     cursor: pointer;
     font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.pre-footer>button:hover {
+    background-color: #88e4e4;
 }
 
 .footer-infos-container-main {
+    box-sizing: border-box;
     background-color: var(--very-dark-violet);
     width: 100%;
     height: 20rem;
@@ -334,8 +378,15 @@ nav>.logo_and_options>ul {
 
 .footer-infos-container>ul>li {
     margin-bottom: 8px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.footer-infos-container>ul>li:hover {
+    color: var(--cyan);
 }
 
 .social-medias>img {
     margin-left: 15px;
+    cursor: pointer;
 }
