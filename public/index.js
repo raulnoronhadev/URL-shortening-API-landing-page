@@ -5,8 +5,18 @@ $(document).ready(function () {
     button.on('click', async function () {
         const originalUrl = input.val().trim();
 
+        // Limpa mensagens anteriores
+        $(".container-box-link p").remove();
+
+        // Caso o campo esteja vazio
         if (!originalUrl) {
             console.log("Enter a valid URL");
+            $(".container-box-link").append(`<p>Please add link</p>`);
+            input.addClass("input-link-error-effect");
+            setTimeout(() => {
+                input.removeClass("input-link-error-effect");
+            }, 800);
+            return;
         }
 
         try {
@@ -31,16 +41,18 @@ $(document).ready(function () {
                 `)
             } else {
                 console.log('Error shortening URL');
-                $(".container-box-link").append(`
-                    <p>Please add link</p>
-                `);
-                $(".input-link").addId("input-link-error-effect");
+                input.addClass("error-effect");
                 setTimeout(() => {
-                    $(".input-link").removeId("input-link-error-effect");
-                })
+                    input.removeClass("error-effect");
+                }, 800);
             }
         } catch (error) {
-            console.log("Error connecting to server")
+            console.log("Error connecting to server");
+            $(".container-box-link").append(`<p>Server error</p>`);
+            input.addClass("error-effect");
+            setTimeout(() => {
+                input.removeClass("error-effect");
+            }, 800);
         }
     })
 })

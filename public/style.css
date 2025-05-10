@@ -217,18 +217,25 @@ nav>.logo_and_options>ul>li:hover {
 
 /* Se o input estiver vazio ou o conteúdo não for compatível */
 
-#input-link-error-effect {
+.input-link-error-effect {
+    border-width: 3px;
+    border-style: solid;
     animation: error-effect 0.4s ease-in-out 2;
 }
 
-@keyframe error-effect {
-    border-style: solid;
-    border-width: 3px;
-    border-color: var(--red);
-    color: var(--red);
+@keyframes error-effect {
+
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--red);
+    }
 }
 
-#input-link-error::placeholder {
+.input-link-error-effect::placeholder {
     color: var(--red);
     opacity: 1;
 }
