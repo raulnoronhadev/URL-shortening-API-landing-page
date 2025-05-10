@@ -215,6 +215,31 @@ nav>.logo_and_options>ul>li:hover {
     text-align: center;
 }
 
+/* Se tudo funcionar corretamente */
+
+.input-link-sucess-effect {
+    border-width: 3px;
+    border-style: solid;
+    animation: sucess-effect 0.4s ease-in-out 2;
+}
+
+@keyframes sucess-effect {
+
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--cyan);
+    }
+}
+
+.input-link-sucess-effect::placeholder {
+    color: var(--cyan);
+    opacity: 1;
+}
+
 /* Se o input estiver vazio ou o conteúdo não for compatível */
 
 .input-link-error-effect {
@@ -239,6 +264,7 @@ nav>.logo_and_options>ul>li:hover {
     color: var(--red);
     opacity: 1;
 }
+
 
 .input-and-button>button {
     height: 100%;

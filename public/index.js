@@ -1,6 +1,25 @@
 $(document).ready(function () {
     const input = $('.input-link');
     const button = $('.button-shorten-it');
+    
+    function sucessAlert() {
+        console.log("Enter a valid URL");
+        input.addClass("input-link-sucess-effect");
+        setTimeout(() => {
+            input.removeClass("input-link-sucess-effect");
+        }, 800);
+        return;
+    }
+
+    function errorAlert() {
+        console.log("Enter a valid URL");
+        $(".container-box-link").append(`<p>Please add link</p>`);
+        input.addClass("input-link-error-effect");
+        setTimeout(() => {
+            input.removeClass("input-link-error-effect");
+        }, 800);
+        return;
+    }
 
     button.on('click', async function () {
         const originalUrl = input.val().trim();
@@ -10,13 +29,7 @@ $(document).ready(function () {
 
         // Caso o campo esteja vazio
         if (!originalUrl) {
-            console.log("Enter a valid URL");
-            $(".container-box-link").append(`<p>Please add link</p>`);
-            input.addClass("input-link-error-effect");
-            setTimeout(() => {
-                input.removeClass("input-link-error-effect");
-            }, 800);
-            return;
+            errorAlert();
         }
 
         try {
@@ -30,6 +43,7 @@ $(document).ready(function () {
 
             if (data.shortUrl) {
                 console.log(`Shortened URL: ${data.shortUrl}`);
+                sucessAlert();
                 $(".container-list-links").append(`
                     <div class="link-created">
                         <a class="original-link" href="${originalUrl}">${originalUrl}</a>
@@ -39,20 +53,9 @@ $(document).ready(function () {
                         </div>
                     </div>
                 `)
-            } else {
-                console.log('Error shortening URL');
-                input.addClass("error-effect");
-                setTimeout(() => {
-                    input.removeClass("error-effect");
-                }, 800);
             }
         } catch (error) {
-            console.log("Error connecting to server");
-            $(".container-box-link").append(`<p>Server error</p>`);
-            input.addClass("error-effect");
-            setTimeout(() => {
-                input.removeClass("error-effect");
-            }, 800);
+            errorAlert();
         }
     })
 })
