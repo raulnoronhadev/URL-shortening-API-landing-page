@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Shortly URL shortening API Challenge</title>
   <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -41,8 +42,20 @@
 
     <section class="infos-wrapper">
       <section class="container-box-link">
-        <input type="text" placeholder="Shorten a link here...">
-        <button>Shorten It!</button>
+        <div class="input-and-button">
+          <input id="input-link" class="input-link-error" type="text" placeholder="Shorten a link here...">
+          <button id="button-shorten-it">Shorten It!</button>
+        </div>
+      </section>
+
+      <section class="container-list-links">
+        <div class="link-created">
+          <a class="original-link" href=""></a>
+          <div class="short-link-and-button">
+            <a class="short-link" href=""></a>
+            <button class="copy-button">Copy</button>
+          </div>
+        </div>
       </section>
 
       <section class="advanced-statistics">
@@ -82,7 +95,6 @@
       </section>
     </section>
   </main>
-
 
   <footer>
     <section class="pre-footer">
@@ -133,6 +145,8 @@
       </div>
     </div>
   </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./index.js"></script>
 </body>
 
 </html>
