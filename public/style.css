@@ -205,7 +205,7 @@ nav>.logo_and_options>ul>li:hover {
     gap: 10px;
 }
 
-#input-link {
+.input-link {
     height: 100%;
     flex: 4;
     border-radius: 10px;
@@ -215,10 +215,22 @@ nav>.logo_and_options>ul>li:hover {
     text-align: center;
 }
 
-.input-link-error {
-    border-width: 100px;
+/* Se o input estiver vazio ou o conteúdo não for compatível */
+
+#input-link-error-effect {
+    animation: error-effect 0.4s ease-in-out 2;
+}
+
+@keyframe error-effect {
+    border-style: solid;
+    border-width: 3px;
     border-color: var(--red);
     color: var(--red);
+}
+
+#input-link-error::placeholder {
+    color: var(--red);
+    opacity: 1;
 }
 
 .input-and-button>button {

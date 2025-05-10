@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    const input = $('#input-link');
-    const button = $('#button-shorten-it');
+    const input = $('.input-link');
+    const button = $('.button-shorten-it');
 
     button.on('click', async function () {
         const originalUrl = input.val().trim();
@@ -34,6 +34,10 @@ $(document).ready(function () {
                 $(".container-box-link").append(`
                     <p>Please add link</p>
                 `);
+                $(".input-link").addId("input-link-error-effect");
+                setTimeout(() => {
+                    $(".input-link").removeId("input-link-error-effect");
+                })
             }
         } catch (error) {
             console.log("Error connecting to server")
