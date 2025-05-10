@@ -2,6 +2,19 @@ $(document).ready(function () {
     const input = $('.input-link');
     const button = $('.button-shorten-it');
     
+    let savedLinks = JSON.parse(localStorage.getItem("shortenedLinks")) || [];
+    savedLinks.forEach(link => {
+        $(".container-list-links").append(`
+            <div class="link-created">
+                <a class="original-link" href="${link.originalUrl}">${link.originalUrl}</a>
+                <div class="short-link-and-button">
+                    <a class="short-link" href="${link.shortUrl}">${link.shortUrl}</a>
+                    <button class="copy-button">Copy</button>
+                </div>
+            </div>
+        `);
+    });
+
     function sucessAlert() {
         console.log("Enter a valid URL");
         input.addClass("input-link-sucess-effect");
@@ -24,10 +37,10 @@ $(document).ready(function () {
     button.on('click', async function () {
         const originalUrl = input.val().trim();
 
-        // Limpa mensagens anteriores
+        // Clen messages
         $(".container-box-link p").remove();
 
-        // Caso o campo esteja vazio
+        // If field is empty
         if (!originalUrl) {
             errorAlert();
         }
@@ -53,6 +66,9 @@ $(document).ready(function () {
                         </div>
                     </div>
                 `)
+                let savedLinks = JSON.parse(localStorage.getItem("shortenedLinks")) || [];
+                savedLinks.push({ originalUrl, shortUrl: data.shortUrl });
+                localStorage.setItem("shortenedLinks", JSON.stringify(savedLinks));    
             }
         } catch (error) {
             errorAlert();
