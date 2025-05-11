@@ -10,6 +10,7 @@ $(document).ready(function () {
                 <div class="short-link-and-button">
                     <a class="short-link" href="${link.shortUrl}">${link.shortUrl}</a>
                     <button class="copy-button">Copy</button>
+                    <button class="delete-button">Delete</button>
                 </div>
             </div>
         `);
@@ -43,6 +44,7 @@ $(document).ready(function () {
         // If field is empty
         if (!originalUrl) {
             errorAlert();
+            return;
         }
 
         try {
@@ -69,6 +71,9 @@ $(document).ready(function () {
                 let savedLinks = JSON.parse(localStorage.getItem("shortenedLinks")) || [];
                 savedLinks.push({ originalUrl, shortUrl: data.shortUrl });
                 localStorage.setItem("shortenedLinks", JSON.stringify(savedLinks));    
+            }
+            else {
+                errorAlert();
             }
         } catch (error) {
             errorAlert();

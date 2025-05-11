@@ -308,7 +308,7 @@ nav>.logo_and_options>ul>li:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px 0 30px;
+    padding: 0 45px 0 45px;
 }
 
 .link-created {
@@ -326,7 +326,7 @@ nav>.logo_and_options>ul>li:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .short-link {
@@ -349,6 +349,22 @@ nav>.logo_and_options>ul>li:hover {
 
 .copy-button:hover {
     background-color: #88e4e4;
+}
+
+.delete-button {
+    height: 50px;
+    width: 120px;
+    border-radius: 7px;
+    border-style: none;
+    background-color: var(--red);
+    color: white;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: hsl(0, 100%, 83%);
 }
 
 /* advanced statistics */
