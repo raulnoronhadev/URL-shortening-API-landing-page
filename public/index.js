@@ -80,3 +80,11 @@ $(document).ready(function () {
         }
     })
 })
+
+$(document).on("click", ".delete-button", function () {
+    const shortUrl =  $(this).data("url");
+    let savedLinks = JSON.parse(localStorage.getItem("shortenedLinks")) || [];
+    savedlinks = savedLinks.filter(link => link.shortUrl !== shortUrl);
+    localStorage.setItem("shortenedLinks", JSON.stringify(savedLinks));
+    $(this).closest(".link-created").remove();
+});
