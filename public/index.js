@@ -1,3 +1,9 @@
+$(".get-started-button").on("click", () => {
+    $('html, body').animate({
+        scrollTop: $(".infos-wrapper").offset().top
+    }, 600);
+});
+
 $(document).ready(function () {
     const input = $('.input-link');
     const button = $('.button-shorten-it');
