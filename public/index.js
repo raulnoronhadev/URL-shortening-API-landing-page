@@ -16,7 +16,7 @@ $(document).ready(function () {
                 <div class="short-link-and-button">
                     <a class="short-link" href="${link.shortUrl}">${link.shortUrl}</a>
                     <button class="copy-button">Copy</button>
-                    <button class="delete-button">Delete</button>
+                    <button class="delete-button" data-url="${link.shortUrl}">Delete</button>
                 </div>
             </div>
         `);
@@ -71,6 +71,7 @@ $(document).ready(function () {
                         <div class="short-link-and-button">
                             <a class="short-link" href="${data.shortUrl}">${data.shortUrl}</a>
                             <button class="copy-button">Copy</button>
+                            <button class="delete-button" data-url="${data.shortUrl}">Delete</button>
                         </div>
                     </div>
                 `)
@@ -89,8 +90,12 @@ $(document).ready(function () {
 
 $(document).on("click", ".delete-button", function () {
     const shortUrl =  $(this).data("url");
-    let savedLinks = JSON.parse(localStorage.getItem("shortenedLinks")) || [];
-    savedlinks = savedLinks.filter(link => link.shortUrl !== shortUrl);
-    localStorage.setItem("shortenedLinks", JSON.stringify(savedLinks));
+    if (!shortUrl) return;
+    let storedLinks = JSON.parse(localStorage.getItem("shortenedLinks")) || [];
+    let updatedLinks = storedLinks.filter(link => link.shortUrl !== shortUrl);    
+    localStorage.setItem("shortenedLinks", JSON.stringify(updatedLinks));
     $(this).closest(".link-created").remove();
 });
+
+// NOVO PROBLEMA: QUANDO 1 LINK É DELETADO E A PÁGINA
+// É ATUALIZADA, TODOS OS LINKS SOMEM
