@@ -3,7 +3,7 @@
 
 :root {
     /* Primary */
-    --cyan: hsl(180, 66%, 49%);
+    --cyan: #2acfcf;
     --dark-violet: hsl(257, 27%, 26%);
 
     /* Secondary */
@@ -241,6 +241,37 @@ nav>.logo_and_options>ul>li:hover {
     opacity: 1;
 }
 
+#export-icon {
+    height: 1.8rem;
+}
+
+.button-shorten-it {
+    position: relative;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 8px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    font-size: 12px;
+    z-index: 1;
+}
+
+.button-shorten-it:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
 /* Se o input estiver vazio ou o conteúdo não for compatível */
 
 .input-link-error-effect {
@@ -267,7 +298,19 @@ nav>.logo_and_options>ul>li:hover {
 }
 
 
-.input-and-button>button {
+.button-shorten-it {
+    height: 100%;
+    flex: 1;
+    border-radius: 10px;
+    border-style: none;
+    background-color: var(--cyan);
+    color: white;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.export-links-button {
     height: 100%;
     flex: 1;
     border-radius: 10px;

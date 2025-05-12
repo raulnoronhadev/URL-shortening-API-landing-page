@@ -33,7 +33,7 @@ $(document).ready(function () {
 
     function errorAlert() {
         console.log("Enter a valid URL");
-        $(".container-box-link").append(`<p>Please add link</p>`);
+        $(".container-box-link").append(`<p>Please add a valid link</p>`);
         input.addClass("input-link-error-effect");
         setTimeout(() => {
             input.removeClass("input-link-error-effect");
@@ -126,3 +126,22 @@ $(".social-media-icon").hover(
     }
 );
   
+// Export generated links JSON
+
+$(".export-links-button").on("click", function () {
+    const savedLinks = JSON.parse(localStorage.getItem("shortenedLinks")) || [];
+    if (savedLinks.length === 0) {
+        alert("No links to export.");
+        return;
+    }
+    const dataStr = JSON.stringify(savedLinks, null, 2); // bonito e legível
+    const blob = new Blob([dataStr], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "shortened-links.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+});
