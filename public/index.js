@@ -97,5 +97,19 @@ $(document).on("click", ".delete-button", function () {
     $(this).closest(".link-created").remove();
 });
 
-// NOVO PROBLEMA: QUANDO 1 LINK É DELETADO E A PÁGINA
-// É ATUALIZADA, TODOS OS LINKS SOMEM
+$(document).on("click", ".copy-button", async function () {
+    const shortUrl = $(this).siblings(".short-link").attr("href");
+    try {
+        await navigator.clipboard.writeText(shortUrl);
+        $(this).text("Copied!");
+        setTimeout(() => {
+            $(this).text("Copy");
+        }, 1000);
+    } catch (err) {
+        console.error("Erro ao copiar para a área de transferência:", err);
+        $(this).text("Error");
+        setTimeout(() => {
+            $(this).text("Copy");
+        }, 1000);
+    }
+});
