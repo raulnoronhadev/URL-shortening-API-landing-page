@@ -113,3 +113,16 @@ $(document).on("click", ".copy-button", async function () {
         }, 1000);
     }
 });
+
+// social media icons :hover
+$(".social-media-icon").hover(
+    function () {
+      const src = $(this).attr("src").replace("white-icons", "cyan-icons");
+      $(this).attr("src", src);
+    },
+    function () {
+      const src = $(this).attr("src").replace("cyan-icons", "white-icons");
+      $(this).attr("src", src);
+    }
+);
+  
