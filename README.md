@@ -21,8 +21,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution on Frontend Mentor](https://your-solution-url.com)
-- [Live site](https://your-live-site-url.com)
+- [Live site](https://url-shortening-api-landing-page-u0k3.onrender.com/)
 
 ## My Process
 
