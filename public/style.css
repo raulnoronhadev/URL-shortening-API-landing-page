@@ -123,6 +123,10 @@ nav>.logo_and_options>ul>li:hover {
     background-color: hsla(180, 66%, 49%, 0.562);
 }
 
+#mobile-navbar-display {
+    display: none;
+}
+
 /* hero-section */
 
 .hero-section {
@@ -653,6 +657,80 @@ nav>.logo_and_options>ul>li:hover {
         opacity: 40%;
     }
 
+    /* mobile navbar */
+
+    .mobile-navbar {
+        position: absolute;
+        height: 450px;
+        width: 80%;
+        background-color: var(--dark-violet);
+        border-radius: 12px;
+        top: 8rem;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    #mobile-navbar-display {
+        display: none;
+    }
+
+    .features-pricing-resources {
+        font-size: 20px;
+        font-weight: 600;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 23px;
+    }
+
+    .nav-divisor-line {
+        box-sizing: border-box;
+        background-color: white;
+        height: 1px;
+        width: 80%;
+        z-index: -1;
+    }
+
+    .login-signup {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        gap: 20px;
+    }
+
+    #login-button {
+        border-style: none;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        transition: color 0.2s ease;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    #login-button:hover {
+        color: var(--very-dark-violet);
+    }
+
+    #sign-up-button {
+        border-style: none;
+        background-color: var(--cyan);
+        color: white;
+        transition: background-color 0.2s ease;
+        font-size: 20px;
+        font-weight: 600;
+        height: 50px;
+        border-radius: 40px;
+    }
+
+    #sign-up-button:hover {
+        background-color: hsla(180, 66%, 49%, 0.562);
+    }
+
     /* hero section */
 
     .hero-section {
@@ -665,7 +743,6 @@ nav>.logo_and_options>ul>li:hover {
     .hero-image {
         position: absolute;
         top: 0;
-        left: 36rem;
     }
 
     .hero-image>img {
@@ -1008,6 +1085,7 @@ nav>.logo_and_options>ul>li:hover {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        width: 100%;
     }
 
     .original-link::after {
@@ -1163,6 +1241,10 @@ nav>.logo_and_options>ul>li:hover {
     }
 
     /* footer */
+
+    .pre-footer {
+        height: 350px;
+    }
 
     .footer-infos-container {
         text-align: center;

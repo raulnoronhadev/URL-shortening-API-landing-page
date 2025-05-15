@@ -4,6 +4,21 @@ $(".get-started-button").on("click", () => {
     }, 600);
 });
 
+// show navbar on mobile devices
+$(".hamburguer-menu").on("click", () => {
+  const menu = $("#mobile-navbar-display");
+  $(".hero-image").css("display", "block");
+  if (menu.is(':visible')) {
+    menu.slideUp(200);
+  } else {
+    $(".hero-image").css("display", "none");
+    menu
+      .css("display", "flex")
+      .hide()
+      .slideDown(200);
+  }
+});
+
 $(document).ready(function () {
     const input = $('.input-link');
     const button = $('.button-shorten-it');
